@@ -52,20 +52,26 @@
         </div>
       </div>
     </nav>
-    <div style="padding-top: 200px">
-    <% if notice.blank? %>
-        <% else %>
-      <div class="alert alert-primary" role="alert"> 
-       <%= notice %>
-       </div>   
-       <% end %>
-       <% if alert.blank? %>
-       <% else %>
-      <div class="alert alert-danger" role="alert">  
-      <%= alert %>
-      </div>      
-      <% end %>     
-      <%= yield %>
+    <div style="padding-top: 120px">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-3">
+            <% if notice.blank? %>
+                <% else %>
+              <div class="alert alert-primary" role="alert"> 
+              <%= notice %>
+              </div>   
+              <% end %>
+              <% if alert.blank? %>
+              <% else %>
+              <div class="alert alert-danger" role="alert">  
+              <%= alert %>
+              </div>           
+              <% end %>
+          </div>
+        </div> 
+      </div>         
+    <%= yield %>
     </div>
     <footer class="footer text-center">
         <div class="container">

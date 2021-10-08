@@ -20,3 +20,7 @@
 #signin-form input [type=password]{
   width: 100%
 }
+
+.btn.btn-danger {
+  color: white;
+}
