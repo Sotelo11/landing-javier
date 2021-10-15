@@ -1,5 +1,11 @@
 class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :edit, :update, :destroy]
+  
+  layout 'admin'
+  def initialize
+    super 
+    @categorias = Categorium.all
+  end
 
   # GET /productos
   # GET /productos.json
@@ -14,7 +20,7 @@ class ProductosController < ApplicationController
 
   # GET /productos/new
   def new
-    @producto = Producto.new
+    @producto = Producto.new 
   end
 
   # GET /productos/1/edit

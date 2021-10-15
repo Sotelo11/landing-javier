@@ -1,4 +1,4 @@
-<%= form_with(model: producto) do |form| %>
+S<%= form_with(model: producto) do |form| %>
   <% if producto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(producto.errors.count, "error") %> prohibited this producto from being saved:</h2>
@@ -28,7 +28,12 @@
 
   <div class="field">
     <%= form.label :categorium_id %>
-    <%= form.text_field :categorium_id %>
+   
+    <select name="producto[categorium_id]">
+    <% @categorias.each do |t| %>
+    <option value"<%= t.id %>"><%= t.nombre %></option>
+    <% end %>
+    </select>
   </div>
 
   <div class="actions">
